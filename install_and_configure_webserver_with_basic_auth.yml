@@ -35,3 +35,10 @@
       owner: root
       group: root
       mode: 0644
+   - name: Secrets directory exists
+     file:
+      path: "{{ secrets_dir }}"
+      state: directory
+      owner: apache
+      group: apache
+      mode: 0500
