@@ -42,3 +42,11 @@
       owner: apache
       group: apache
       mode: 0500
+   - name: Web user exists in secrets file
+      htpasswd:
+       path: "{{ secrets_file }}"
+       name: "{{ web_user }}"
+       password: "{{ web_pass }}"
+       owner: apache
+       group: apache
+       mode: 0400
