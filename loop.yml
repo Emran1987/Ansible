@@ -1,0 +1,16 @@
+---
+- name: Install and configure webserver with basic auth
+  hosts: client2
+  become_method: sudo
+  become: yes
+  become_user: root
+  vars:
+   mail_services:
+    - postfix
+    - dovecot
+  tasks:
+    - name: Postfix and Dovecot are running
+      service:
+       name: "{{ item }}"
+       state: started
+       loop: "{{ mail_services }}"
