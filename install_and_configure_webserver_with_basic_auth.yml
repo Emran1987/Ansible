@@ -28,3 +28,10 @@
        - "{{ ssl_pkg }}"
        - "{{ python_pkg }}"
       state: latest
+   - name: Configure web service
+     copy:
+      src: "{{ httpdconf_src }}"
+      dest: "{{ httpdconf_file }}"
+      owner: root
+      group: root
+      mode: 0644
