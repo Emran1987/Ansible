@@ -13,4 +13,11 @@
       service:
        name: "{{ item }}"
        state: started
+       loop:
+        - postfix
+        - dovecot
+    - name: Postfix and Dovecot are running
+      service:
+       name: "{{ item }}"
+       state: started
        loop: "{{ mail_services }}"
