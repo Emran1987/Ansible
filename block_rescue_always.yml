@@ -7,17 +7,17 @@
    db_service: mariadb
   tasks:
     - block:
-    - name: Install {{ web_package }} package
-      yum:
-        name: "{{ web_package }}"
-        state: present
-  rescue:
-    - name: Install {{ db_package }} package
-      yum:
-        name: "{{ db_package }}"
-        state: present
-  always:
-    - name: Start {{ db_service }} service
-      service:
-        name: "{{ db_service }}"
-        state: started
+       - name: Install {{ web_package }} package
+         yum:
+           name: "{{ web_package }}"
+           state: present
+      rescue:
+       - name: Install {{ db_package }} package
+        yum:
+           name: "{{ db_package }}"
+           state: present
+      always:
+       - name: Start {{ db_service }} service
+         service:
+           name: "{{ db_service }}"
+           state: started
