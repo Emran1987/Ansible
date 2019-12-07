@@ -1,0 +1,5 @@
+- name: Ensure database permission groups exist
+  group:
+  name:
+  state: present
+  loop: "{{ host_permission_groups }}"
