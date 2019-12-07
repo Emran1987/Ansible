@@ -1,10 +1,6 @@
 ---
 - name: Task Failure Exercise
   hosts: client1
-  vars:
-   web_package: http
-   db_package: mariadb-server
-   db_service: mariadb
   tasks:
     - block:
        - name: Install {{ web_package }} package
@@ -13,7 +9,7 @@
            state: present
       rescue:
        - name: Install {{ db_package }} package
-        yum:
+         yum:
            name: "{{ db_package }}"
            state: present
       always:
