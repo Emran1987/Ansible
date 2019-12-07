@@ -1,4 +1,3 @@
-[student@workstation projects-file]$ cat tasks/environment.yml
 ---
 - name: Install the {{ package }} package
   yum:
