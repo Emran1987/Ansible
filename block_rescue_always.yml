@@ -4,6 +4,7 @@
   vars:
    web_package: http
    db_package: mariadb-server
+   db_service: mariadb
   tasks:
     - block:
        - name: Install {{ web_package }} package
