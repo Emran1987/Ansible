@@ -31,4 +31,4 @@
        - name: jane
          groups: wheel
        - name: joe
-        groups: root
+         groups: root

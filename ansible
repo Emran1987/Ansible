@@ -1,0 +1,26 @@
+ansible-doc -l
+
+### dry run ####
+ansible-playbook  --syntax-check day1.yml
+ansible-playbook -C day1.yml
+
+
+### man ###
+ansible-doc -l c
+ansible-doc yum
+
+
+
+
+### encreption ###
+ansible-vault create secret.yml
+ansible-vault create --vault-password-file=vault-pass secret.yml
+ansible-vault view secret1.yml
+ansible-vault edit secret.yml
+ansible-vault encrypt viriable.yml
+ ansible-vault rekey secret.yml
+
+
+ ansible-playbook --vault-id @prompt viriable.yml
+
+ ansible-playbook --ask-vault-pass site.yml

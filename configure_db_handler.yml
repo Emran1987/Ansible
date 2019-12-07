@@ -1,13 +1,14 @@
 ---
 - name: MariaDB server is installed
-  hosts: databases
+  hosts: database_servers
+  force_handlers: yes
   vars:
    db_packages:
     - mariadb-server
     - MySQL-python
    db_service: mariadb
-   resources_url: http://materials.example.com/labs/control-handlers
-   config_file_url: "{{ resources_url }}/my.cnf.standard"
+   resources_url: http://master/my.cnf
+   config_file_url: "{{ resources_url }}"
    config_file_dst: /etc/my.cnf
   tasks:
     - name: "{{ db_packages }} packages are installed"
