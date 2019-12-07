@@ -1,6 +1,9 @@
 ---
 - name: Task Failure Exercise
   hosts: client1
+  vars:
+   web_package: http
+   db_package: mariadb-server
   tasks:
     - block:
        - name: Install {{ web_package }} package
