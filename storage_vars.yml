@@ -10,7 +10,7 @@ logical_volumes:
   - name: content-lv
     size: 64M
     vgroup: apache-vg
-     mount_path: /var/www
+    mount_path: /var/www
   - name: logs-lv
     size: 128M
     vgroup: apache-vg
